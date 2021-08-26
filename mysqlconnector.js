@@ -1,9 +1,4 @@
 const mysql = require ('mysql');
-connection = mysql.createConnection({
-    host: "mysql",
-    user: "test",
-    password: "test",
-    database: "test"
-});
-
-module.exports.connection = connection;
+const config = require('./db.config');
+connection = mysql.createPool(config);
+module.exports = connection;
